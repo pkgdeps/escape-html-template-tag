@@ -3,7 +3,7 @@ const ENTITIES = {
   '<': '&lt;',
   '>': '&gt;',
   '"': '&quot;',
-  "'": '&#39;',
+  '\'': '&#39;',
   '/': '&#x2F;',
   '`': '&#x60;',
   '=': '&#x3D;'
@@ -19,10 +19,6 @@ export function join (array, separator) {
     return new HtmlSafeString([''], [])
   }
   return new HtmlSafeString(['', ...Array(array.length - 1).fill(separator), ''], array)
-}
-
-export function safe (value) {
-  return new HtmlSafeString([String(value)], [])
 }
 
 class HtmlSafeString {
@@ -53,6 +49,10 @@ class HtmlSafeString {
   }
 }
 
-export default function escapeHtml (parts, ...subs) {
+export function escapeHtml (parts, ...subs) {
   return new HtmlSafeString(parts, subs)
+}
+
+export function safe (value) {
+  return new HtmlSafeString([String(value)], [])
 }

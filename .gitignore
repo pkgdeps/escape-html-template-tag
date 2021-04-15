@@ -1,5 +1,7 @@
 # built files
-index.js
-
+dist/
 # Dependency directories
 node_modules/
+
+# Workaround
+index.mjs.d.ts
