@@ -26,8 +26,8 @@
     "html"
   ],
   "files": [
-    "index.js",
-    "index.mjs",
+    "dist",
+    "src",
     "index.d.ts"
   ],
   "author": "Jan Potoms",
