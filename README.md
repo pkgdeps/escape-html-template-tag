@@ -1,11 +1,11 @@
-# @pkgdeps/escape-html-template-tag
+# @deps/escape-html-template-tag
 
 Construct string literals that have their substitutions escaped automatically.
 
 Fork of [Janpot/escape-html-template-tag](https://github.com/Janpot/escape-html-template-tag):
 
 - Distributes cjs, umd, modern.js, and es5(IE 11 supports)
-- Use named exports `import { escapeHtml } from "@pkgdeps/escape-html-template-tag"`
+- Use named exports `import { escapeHtml } from "@deps/escape-html-template-tag"`
 
 [![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
@@ -15,7 +15,7 @@ Fork of [Janpot/escape-html-template-tag](https://github.com/Janpot/escape-html-
 ### Basic example
 
 ```js
-import { escapeHtml } from "@pkgdeps/escape-html-template-tag";
+import { escapeHtml } from "@deps/escape-html-template-tag";
 
 const title = 'All about < & >'
 const h1 = escapeHtml`
@@ -29,7 +29,7 @@ const h1 = escapeHtml`
 Escaped template literals can be nested and won't be interpollated again.
 
 ```js
-import { escapeHtml } from "@pkgdeps/escape-html-template-tag";
+import { escapeHtml } from "@deps/escape-html-template-tag";
 const h1 = escapeHtml`<h1>Hello World</h1>`;
 const article = escapeHtml`
   ${h1}
@@ -44,7 +44,7 @@ const article = escapeHtml`
 In case a value is an Array, the items will be individually escaped and concatenated.
 
 ```js
-import { escapeHtml } from "@pkgdeps/escape-html-template-tag";
+import { escapeHtml } from "@deps/escape-html-template-tag";
 const listOfSymbols = escapeHtml`
   <ul>
     ${['<', '&', '>'].map(item => escapeHtml`<li>symbol: ${item}</li>`)}
@@ -62,7 +62,7 @@ const listOfSymbols = escapeHtml`
 If you have html strings that already contain markup you can prevent it from being escaped with `escapeHtml.safe()`.
 
 ```js
-import { escapeHtml, safe } from "@pkgdeps/escape-html-template-tag";
+import { escapeHtml, safe } from "@deps/escape-html-template-tag";
 const trustedString = '<a href="https://www.google.com">Google</a>'
 const navigation = escapeHtml`
   <div>
@@ -77,7 +77,7 @@ const navigation = escapeHtml`
 ### Join fragments together with `join`
 
 ```js
-import { escapeHtml, join } from "@pkgdeps/escape-html-template-tag";
+import { escapeHtml, join } from "@deps/escape-html-template-tag";
 const navigation = escapeHtml`
   <div>
     ${join(
@@ -94,7 +94,7 @@ const navigation = escapeHtml`
 ### Compose templates easily with functions
 
 ```js
-import { escapeHtml } from "@pkgdeps/escape-html-template-tag";
+import { escapeHtml } from "@deps/escape-html-template-tag";
 
 const anchor = (text, href) => escapeHtml`<a href="${href}">${text}</a>`
 
